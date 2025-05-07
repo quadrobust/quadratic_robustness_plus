@@ -1,0 +1,5 @@
+================ Baseline + Robust ================
+(clean – ImageNet-val,  QC – Quadratic-C)
+==================================================
+resnet50 std  eps=0.10  clean=0.00  qc=0.00
+resnet50 std  eps=0.15  clean=0.00  qc=0.00

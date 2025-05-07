@@ -16,9 +16,10 @@ VAL_ROOT     = PROJECT_ROOT / "data" / "imagenet" / "val"
 # Standard mean and standard deviation used for normalizing ImageNet images
 _MEAN = [0.485, 0.456, 0.406]
 _STD  = [0.229, 0.224, 0.225]
+_NORMALIZE = T.Normalize(_MEAN, _STD)
 
 # ── Builds the ImageNet Validation Dataset ──────────────
-def build_imagenet_val(qc=False, eps_aff=0.30, eps_trans=0.30):
+def build_imagenet_val(qc=False, eps_aff=0.30, eps_trans=0.30, apply_normalize: bool = True):
     """
     Constructs the ImageNet validation dataset with optional QuadAug transformations.
 
@@ -33,23 +34,24 @@ def build_imagenet_val(qc=False, eps_aff=0.30, eps_trans=0.30):
     base = [T.Resize(256), T.CenterCrop(224)]  # Standard preprocessing for ImageNet
     if qc:
         # Apply custom QuadAug transformation followed by normalization
-        transform = T.Compose(base + [
-            QuadAugTransform(p=1.0, eps_aff=eps_aff, eps_trans=eps_trans),
-            T.Normalize(_MEAN, _STD)
-        ])
+        tfm = base + [
+            QuadAugTransform(p=1.0, eps_aff=eps_aff, eps_trans=eps_trans)
+        ]
+        if apply_normalize:
+            tfm.append(_NORMALIZE)
     else:
         # Apply standard ToTensor and normalization only
-        transform = T.Compose(base + [
-            T.ToTensor(),
-            T.Normalize(_MEAN, _STD)
-        ])
-    return ImageFolder(str(VAL_ROOT), transform=transform)
+        tfm = base + [T.ToTensor()]
+        if apply_normalize:
+            tfm.append(_NORMALIZE)
+    return ImageFolder(str(VAL_ROOT), transform=T.Compose(tfm))
 
 # ── DataLoader Wrapper ──────────────────────────────────
 def loader(batch=64,
            qc=False,
            eps_aff=0.30,
            eps_trans=0.30,
+           apply_normalize: bool = True,
            num_workers=4):
     """
     Prepares a DataLoader for the ImageNet validation set.
@@ -66,7 +68,8 @@ def loader(batch=64,
     """
     ds = build_imagenet_val(qc=qc,
                             eps_aff=eps_aff,
-                            eps_trans=eps_trans)
+                            eps_trans=eps_trans,
+                            apply_normalize=apply_normalize)
     return DataLoader(ds,
                       batch_size=batch,
                       shuffle=False,
