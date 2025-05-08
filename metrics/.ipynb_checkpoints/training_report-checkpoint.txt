@@ -1,0 +1,5 @@
+
+=== Training resnet50 ===
+Hyperparams: eps_aff=0.3, eps_trans=0.3, batch_size=128, lr=5e-05, epochs=10
+Start: Wed May  7 21:05:09 2025
+Epoch 1: avg_loss=5.5365
