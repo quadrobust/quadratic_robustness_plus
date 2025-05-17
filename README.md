@@ -64,7 +64,7 @@ Our aim is to make it painless to
 
 ---
 
-## Quick‑start
+## Quick-start
 ---
 ### Clone & install
 
