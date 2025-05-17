@@ -1,6 +1,9 @@
-# Quadratic‑C & QuadraticAug
 
-> **Benchmark & augmentation for non‑affine spatial robustness**
+---
+# Quadratic‑C & QuadraticAug
+---
+
+**Benchmark & augmentation for non‑affine spatial robustness**
 
 This repository accompanies our paper *“Robustness to Smooth Quadratic Warps: The Quadratic‑C Benchmark and a Simple Data Augmentation”*.
 It contains everything needed to **evaluate** existing ImageNet models under quadratic warps and to **train** new models that handle them better.
@@ -17,9 +20,9 @@ Our aim is to make it painless to
 ---
 
 ## Table of Contents
-
+---
 1. [Repository Layout](#repository-layout)
-2. [Quick‑start](#quick–start)  
+2. [Quick‑start](#quick-start)  
 3. [Running Experiments](#running-experiments)
 4. [Reproducing paper numbers](#reproducing-paper-numbers)
 5. [License & dataset usage](#license--dataset-usage)
@@ -28,7 +31,7 @@ Our aim is to make it painless to
 ---
 
 ## Repository Layout
-
+---
 ```text
 ├── env.yml                      # Conda environment (name: quadrob)
 ├── src/                         # Core Python modules
@@ -62,7 +65,7 @@ Our aim is to make it painless to
 ---
 
 ## Quick‑start
-
+---
 ### Clone & install
 
 ```bash
@@ -90,7 +93,7 @@ python scripts/prepare_imagenet_val.py --root data/imagenet
 ---
 
 ## Running experiments
-
+---
 Below commands assume you are in the repo root.
 
 1. **Baseline accuracy (clean + Quadratic‑C)**
@@ -124,7 +127,7 @@ Each shell wrapper simply passes sane defaults to the underlying Python module�
 ---
 
 ## Reproducing paper numbers
-
+---
 Running all five steps above for each backbone recreates the CSV files that back every figure/table in the submission.
 
 Hardware used in the paper: **1× NVIDIA A100 80 GB**, runtime ≈24 GPU‑hours total.
@@ -132,7 +135,7 @@ Hardware used in the paper: **1× NVIDIA A100 80 GB**, runtime ≈24 GPU
 ---
 
 ## License & dataset usage
-
+---
 ### Code
 
 All source code in this repository is released under the permissive **MIT License**. You are free to use, modify and redistribute it, provided that the license notice remains in every derived file.
