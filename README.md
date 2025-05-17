@@ -18,7 +18,7 @@ The goal is to make it straightforward to **(i)** measure how fragile a vision b
 2. [Quick‑start](#quick-start)  
 3. [Running Experiments](#running-experiments)
 4. [Reproducing paper numbers](#reproducing-paper-results)
-5. [License](#license)
+5. [License & dataset usage](#license)
 
 
 ---
@@ -87,12 +87,12 @@ python scripts/prepare_imagenet_val.py --root data/imagenet
 
 ## Running experiments
 
-Below commands assume you are in the repo root and `$IMAGENET_ROOT` is set.
+Below commands assume you are in the repo root.
 
 1. **Baseline accuracy (clean + Quadratic‑C)**
 
    ```bash
-   bash scripts/eval_baseline.sh        # writes metrics/baseline.csv
+   bash scripts/eval_baseline.sh        # writes metrics/eval_baseline.csv (.txt)
    ```
 2. **Fine‑tune a backbone with QuadraticAug**
 
@@ -105,17 +105,17 @@ Below commands assume you are in the repo root and `$IMAGENET_ROOT` is set.
 3. **Evaluate the fine‑tuned checkpoint**
 
    ```bash
-   bash scripts/eval_finetuned.sh       # outputs metrics/finetuned.csv
+   bash scripts/eval_finetuned.sh       # outputs metrics/eval_finetuned.csv (.txt)
    ```
 4. **Adaptive quadratic‑PGD attack**
 
    ```bash
-   bash scripts/run_attack.sh           # outputs metrics/attack.csv
+   bash scripts/run_attack.sh           # outputs metrics/attack_sweap.csv (.txt)
    ```
 5. **Deterministic certificate (CRA)**
 
    ```bash
-   bash scripts/certify.sh              # outputs metrics/cra.csv
+   bash scripts/certify.sh              # outputs metrics/certify.csv (.txt)
    ```
 
 Each shell wrapper simply passes sane defaults to the underlying Python module—you can open them to tweak severity lists, grid size, logging options, etc.
@@ -130,8 +130,20 @@ Hardware used in the paper: **1× NVIDIA A100 80 GB**, runtime ≈24 GPU
 
 ---
 
-## License
+## License & dataset usage
 
-*Code* is released under the MIT License.
-Quadratic‑C images are generated on‑the‑fly from the original **ImageNet‑1k validation** set, which is licensed for non‑commercial research – you must separately agree to the ImageNet terms.
+### 1  Code
+
+All source code in this repository is released under the permissive **MIT License**. You are free to use, modify and redistribute it, provided that the license notice remains in every derived file.
+
+### 2  ImageNet‑1k validation images
+
+Quadratic‑C is a *streaming* corruption: it warps images **on‑the‑fly** in GPU memory. **No JPEGs are checked into this repo and no derivative images are saved to disk by default.**
+
+Our own experiments were carried out under an approved **academic ImageNet licence** and strictly follow the obligations quoted below: the data were used *only* for non‑commercial research, kept on internal storage, and never redistributed. We instruct every user to do the same.
+
+**By running any script in this repo you acknowledge that you have a valid licence and that you comply with its conditions.**  Commercial use requires a separate agreement with the ImageNet administrators.
+
+---
+
 
