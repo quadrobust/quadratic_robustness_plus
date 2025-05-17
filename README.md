@@ -30,7 +30,7 @@ Our aim is to make it painless to
 ## Repository Layout
 
 ```text
-├── env.yml                      # Conda environment (Python ≥3.10, CUDA 11.8)
+├── env.yml                      # Conda environment
 ├── src/                         # Core Python modules
 │   ├── attacks/                 # Adaptive adversarial attacks
 │   │   └── q_attack.py          # Quadratic‑PGD (parameter‑space) attack
@@ -101,10 +101,7 @@ Below commands assume you are in the repo root.
 2. **Fine‑tune a backbone with QuadraticAug**
 
    ```bash
-   python src/train/finetune_quadaug.py \
-          --model resnet50 --epochs 10 --batch-size 128 \
-          --p 0.7 --eps-aff 0.3 --eps-trans 0.3 \
-          --save-path models/resnet50_qaug.pth
+   python3 src/train/finetune_quadaug.py   --eps    0.3   --epochs 10   --batch  128   --lr     5e-5   2>&1
    ```
 3. **Evaluate the fine‑tuned checkpoint**
 
