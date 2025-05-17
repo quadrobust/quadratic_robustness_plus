@@ -19,10 +19,10 @@ Our aim is to make it painless to
 ## Table of Contents
 
 1. [Repository Layout](#repository-layout)
-2. [Quick‑start](#quick-start)  
+2. [Quick‑start](#quick–start)  
 3. [Running Experiments](#running-experiments)
-4. [Reproducing paper numbers](#reproducing-paper-results)
-5. [License & dataset usage](#license)
+4. [Reproducing paper numbers](#reproducing-paper-numbers)
+5. [License & dataset usage](#license--dataset-usage)
 
 
 ---
