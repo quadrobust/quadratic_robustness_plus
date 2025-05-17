@@ -30,7 +30,7 @@ Our aim is to make it painless to
 ## Repository Layout
 
 ```text
-├── env.yml                      # Conda environment
+├── env.yml                      # Conda environment (name: quadrob)
 ├── src/                         # Core Python modules
 │   ├── attacks/                 # Adaptive adversarial attacks
 │   │   └── q_attack.py          # Quadratic‑PGD (parameter‑space) attack
@@ -63,7 +63,7 @@ Our aim is to make it painless to
 
 ## Quick‑start
 
-### 1 Clone & install
+### Clone & install
 
 ```bash
 git clone https://github.com/quadrobust/quadratic_robustness_plus.git
@@ -72,7 +72,7 @@ conda env create -f env.yml
 conda activate quadrob
 ```
 
-### 2 Download **ImageNet‑1k validation** split
+### Download **ImageNet‑1k validation** split
 
 Only the 50 000 validation JPEGs are needed (≈6.3 GB).
 
@@ -111,7 +111,7 @@ Below commands assume you are in the repo root.
 4. **Adaptive quadratic‑PGD attack**
 
    ```bash
-   bash scripts/run_attack.sh           # outputs metrics/attack_sweap.csv (.txt)
+   bash scripts/run_attack.sh           # outputs metrics/attack_sweep.csv (.txt)
    ```
 5. **Deterministic certificate (CRA)**
 
@@ -133,11 +133,11 @@ Hardware used in the paper: **1× NVIDIA A100 80 GB**, runtime ≈24 GPU
 
 ## License & dataset usage
 
-### 1  Code
+### Code
 
 All source code in this repository is released under the permissive **MIT License**. You are free to use, modify and redistribute it, provided that the license notice remains in every derived file.
 
-### 2  ImageNet‑1k validation images
+### ImageNet‑1k validation images
 
 Quadratic‑C is a *streaming* corruption: it warps images **on‑the‑fly** in GPU memory. **No JPEGs are checked into this repo and no derivative images are saved to disk by default.**
 
