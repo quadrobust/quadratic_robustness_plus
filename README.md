@@ -51,7 +51,7 @@ Robustness to **Smooth Quadratic Warps**
 │   ├── eval_finetuned.sh        # Evaluate QuadraticAug‑fine‑tuned checkpoints
 │   ├── run_attack.sh            # Adaptive quadratic‑PGD attack sweep
 │   └── prepare_imagenet_val.py  # Re‑index ImageNet‑val into class folders
-├── metrics/                     # CSV / JSON outputs reproduced for the paper
+├── metrics/                     # CSV / TXT outputs reproduced for the paper
 └── data/                        # Will contain ImageNet after manual download
 ```
 
@@ -63,7 +63,7 @@ Robustness to **Smooth Quadratic Warps**
 
 ```bash
 # clone
-git clone https://github.com/<your‑org>/quadratic_robustness_plus.git
+git clone https://github.com/quadrobust/quadratic_robustness_plus.git
 cd quadratic_robustness_plus
 
 # create conda env
