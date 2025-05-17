@@ -1,0 +1,24 @@
+================  Evaluation of Fine-Tuned Models  ================
+(clean – ImageNet-val,  QC – Quadratic-C; fine-tuned with ε=0.30)
+====================================================================
+resnet50                   eps=0.10  clean= 76.50  qc= 48.99
+resnet50                   eps=0.15  clean= 76.50  qc= 46.89
+resnet50                   eps=0.20  clean= 76.50  qc= 44.90
+resnet50                   eps=0.25  clean= 76.50  qc= 41.84
+resnet50                   eps=0.30  clean= 76.50  qc= 38.42
+resnet50                   eps=0.50  clean= 76.50  qc= 22.93
+
+efficientnet_b3            eps=0.10  clean= 78.93  qc= 54.33
+efficientnet_b3            eps=0.15  clean= 78.93  qc= 53.06
+efficientnet_b3            eps=0.20  clean= 78.93  qc= 50.23
+efficientnet_b3            eps=0.25  clean= 78.93  qc= 47.17
+efficientnet_b3            eps=0.30  clean= 78.93  qc= 43.96
+efficientnet_b3            eps=0.50  clean= 78.93  qc= 27.01
+
+vit_small_patch16_224      eps=0.10  clean= 85.42  qc= 68.48
+vit_small_patch16_224      eps=0.15  clean= 85.42  qc= 66.77
+vit_small_patch16_224      eps=0.20  clean= 85.42  qc= 64.66
+vit_small_patch16_224      eps=0.25  clean= 85.42  qc= 61.35
+vit_small_patch16_224      eps=0.30  clean= 85.42  qc= 57.09
+vit_small_patch16_224      eps=0.50  clean= 85.42  qc= 38.01
+

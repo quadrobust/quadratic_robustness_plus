@@ -1,0 +1,51 @@
+
+=== Training resnet50 ===
+Hyperparams: eps_aff=0.3, eps_trans=0.3, batch_size=128, lr=5e-05, epochs=10
+Start: Thu May  8 06:20:30 2025
+Epoch 1: avg_loss=5.5699
+Epoch 2: avg_loss=4.7888
+Epoch 3: avg_loss=4.5308
+Epoch 4: avg_loss=4.3723
+Epoch 5: avg_loss=4.2580
+Epoch 6: avg_loss=4.1712
+Epoch 7: avg_loss=4.0811
+Epoch 8: avg_loss=4.0276
+Epoch 9: avg_loss=3.9741
+Epoch 10: avg_loss=3.9466
+Post-train clean_acc=76.50%  qc_acc=29.10%
+Finished: Thu May  8 06:44:46 2025  Duration: 0.40 h
+
+
+=== Training efficientnet_b3 ===
+Hyperparams: eps_aff=0.3, eps_trans=0.3, batch_size=128, lr=5e-05, epochs=10
+Start: Thu May  8 06:44:46 2025
+Epoch 1: avg_loss=5.1691
+Epoch 2: avg_loss=4.4046
+Epoch 3: avg_loss=4.1430
+Epoch 4: avg_loss=4.0198
+Epoch 5: avg_loss=3.8974
+Epoch 6: avg_loss=3.8052
+Epoch 7: avg_loss=3.7123
+Epoch 8: avg_loss=3.6670
+Epoch 9: avg_loss=3.5919
+Epoch 10: avg_loss=3.5501
+Post-train clean_acc=78.93%  qc_acc=33.20%
+Finished: Thu May  8 07:09:58 2025  Duration: 0.42 h
+
+
+=== Training vit_small_patch16_224 ===
+Hyperparams: eps_aff=0.3, eps_trans=0.3, batch_size=64, lr=5e-05, epochs=10
+Start: Thu May  8 07:09:58 2025
+Epoch 1: avg_loss=4.0318
+Epoch 2: avg_loss=3.6050
+Epoch 3: avg_loss=3.4366
+Epoch 4: avg_loss=3.2901
+Epoch 5: avg_loss=3.2069
+Epoch 6: avg_loss=3.1219
+Epoch 7: avg_loss=3.0594
+Epoch 8: avg_loss=2.9787
+Epoch 9: avg_loss=2.9073
+Epoch 10: avg_loss=2.8705
+Post-train clean_acc=85.42%  qc_acc=44.70%
+Finished: Thu May  8 07:32:26 2025  Duration: 0.37 h
+

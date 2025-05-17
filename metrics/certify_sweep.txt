@@ -1,0 +1,1218 @@
+=== Quadratic Certification Sweep ===
+>>> Certification for model: resnet50
+  * form=1 severity=0.02
+      -> CRA = 0.0810
+  * form=1 severity=0.04
+      -> CRA = 0.0742
+  * form=1 severity=0.06
+      -> CRA = 0.0630
+  * form=1 severity=0.08
+      -> CRA = 0.0562
+  * form=1 severity=0.10
+      -> CRA = 0.0450
+  * form=2 severity=0.02
+      -> CRA = 0.0096
+  * form=2 severity=0.04
+      -> CRA = 0.0056
+  * form=2 severity=0.06
+      -> CRA = 0.0046
+  * form=2 severity=0.08
+      -> CRA = 0.0038
+  * form=2 severity=0.10
+      -> CRA = 0.0022
+  * form=3 severity=0.02
+      -> CRA = 0.1060
+  * form=3 severity=0.04
+      -> CRA = 0.0870
+  * form=3 severity=0.06
+      -> CRA = 0.0720
+  * form=3 severity=0.08
+      -> CRA = 0.0596
+  * form=3 severity=0.10
+      -> CRA = 0.0456
+  * form=4 severity=0.02
+      -> CRA = 0.0200
+  * form=4 severity=0.04
+      -> CRA = 0.0150
+  * form=4 severity=0.06
+      -> CRA = 0.0106
+  * form=4 severity=0.08
+      -> CRA = 0.0082
+  * form=4 severity=0.10
+      -> CRA = 0.0056
+  * form=5 severity=0.02
+      -> CRA = 0.1114
+  * form=5 severity=0.04
+      -> CRA = 0.0778
+  * form=5 severity=0.06
+      -> CRA = 0.0530
+  * form=5 severity=0.08
+      -> CRA = 0.0406
+  * form=5 severity=0.10
+      -> CRA = 0.0280
+  * form=6 severity=0.02
+      -> CRA = 0.2206
+  * form=6 severity=0.04
+      -> CRA = 0.1894
+  * form=6 severity=0.06
+      -> CRA = 0.1620
+  * form=6 severity=0.08
+      -> CRA = 0.1398
+  * form=6 severity=0.10
+      -> CRA = 0.1172
+  * form=7 severity=0.02
+      -> CRA = 0.0228
+  * form=7 severity=0.04
+      -> CRA = 0.0106
+  * form=7 severity=0.06
+      -> CRA = 0.0082
+  * form=7 severity=0.08
+      -> CRA = 0.0058
+  * form=7 severity=0.10
+      -> CRA = 0.0048
+  * form=8 severity=0.02
+      -> CRA = 0.1686
+  * form=8 severity=0.04
+      -> CRA = 0.1280
+  * form=8 severity=0.06
+      -> CRA = 0.1004
+  * form=8 severity=0.08
+      -> CRA = 0.0772
+  * form=8 severity=0.10
+      -> CRA = 0.0598
+  * form=9 severity=0.02
+      -> CRA = 0.1788
+  * form=9 severity=0.04
+      -> CRA = 0.1520
+  * form=9 severity=0.06
+      -> CRA = 0.1224
+  * form=9 severity=0.08
+      -> CRA = 0.1038
+  * form=9 severity=0.10
+      -> CRA = 0.0794
+  * form=10 severity=0.02
+      -> CRA = 0.0520
+  * form=10 severity=0.04
+      -> CRA = 0.0382
+  * form=10 severity=0.06
+      -> CRA = 0.0346
+  * form=10 severity=0.08
+      -> CRA = 0.0260
+  * form=10 severity=0.10
+      -> CRA = 0.0210
+  * form=11 severity=0.02
+      -> CRA = 0.1500
+  * form=11 severity=0.04
+      -> CRA = 0.1144
+  * form=11 severity=0.06
+      -> CRA = 0.0858
+  * form=11 severity=0.08
+      -> CRA = 0.0648
+  * form=11 severity=0.10
+      -> CRA = 0.0496
+  * form=12 severity=0.02
+      -> CRA = 0.4344
+  * form=12 severity=0.04
+      -> CRA = 0.3882
+  * form=12 severity=0.06
+      -> CRA = 0.3556
+  * form=12 severity=0.08
+      -> CRA = 0.3142
+  * form=12 severity=0.10
+      -> CRA = 0.2662
+  * form=13 severity=0.02
+      -> CRA = 0.2194
+  * form=13 severity=0.04
+      -> CRA = 0.1972
+  * form=13 severity=0.06
+      -> CRA = 0.1772
+  * form=13 severity=0.08
+      -> CRA = 0.1598
+  * form=13 severity=0.10
+      -> CRA = 0.1384
+  * form=14 severity=0.02
+      -> CRA = 0.0010
+  * form=14 severity=0.04
+      -> CRA = 0.0010
+  * form=14 severity=0.06
+      -> CRA = 0.0008
+  * form=14 severity=0.08
+      -> CRA = 0.0010
+  * form=14 severity=0.10
+      -> CRA = 0.0010
+  * form=15 severity=0.02
+      -> CRA = 0.6968
+  * form=15 severity=0.04
+      -> CRA = 0.6740
+  * form=15 severity=0.06
+      -> CRA = 0.6536
+  * form=15 severity=0.08
+      -> CRA = 0.6338
+  * form=15 severity=0.10
+      -> CRA = 0.6132
+✓ Completed certification for resnet50
+>>> Certification for model: efficientnet_b3
+  * form=1 severity=0.02
+      -> CRA = 0.0792
+  * form=1 severity=0.04
+      -> CRA = 0.0668
+  * form=1 severity=0.06
+      -> CRA = 0.0554
+  * form=1 severity=0.08
+      -> CRA = 0.0484
+  * form=1 severity=0.10
+      -> CRA = 0.0396
+  * form=2 severity=0.02
+      -> CRA = 0.0090
+  * form=2 severity=0.04
+      -> CRA = 0.0056
+  * form=2 severity=0.06
+      -> CRA = 0.0046
+  * form=2 severity=0.08
+      -> CRA = 0.0022
+  * form=2 severity=0.10
+      -> CRA = 0.0030
+  * form=3 severity=0.02
+      -> CRA = 0.0896
+  * form=3 severity=0.04
+      -> CRA = 0.0682
+  * form=3 severity=0.06
+      -> CRA = 0.0520
+  * form=3 severity=0.08
+      -> CRA = 0.0420
+  * form=3 severity=0.10
+      -> CRA = 0.0320
+  * form=4 severity=0.02
+      -> CRA = 0.0118
+  * form=4 severity=0.04
+      -> CRA = 0.0084
+  * form=4 severity=0.06
+      -> CRA = 0.0064
+  * form=4 severity=0.08
+      -> CRA = 0.0048
+  * form=4 severity=0.10
+      -> CRA = 0.0038
+  * form=5 severity=0.02
+      -> CRA = 0.0350
+  * form=5 severity=0.04
+      -> CRA = 0.0212
+  * form=5 severity=0.06
+      -> CRA = 0.0142
+  * form=5 severity=0.08
+      -> CRA = 0.0096
+  * form=5 severity=0.10
+      -> CRA = 0.0064
+  * form=6 severity=0.02
+      -> CRA = 0.1304
+  * form=6 severity=0.04
+      -> CRA = 0.1048
+  * form=6 severity=0.06
+      -> CRA = 0.0808
+  * form=6 severity=0.08
+      -> CRA = 0.0688
+  * form=6 severity=0.10
+      -> CRA = 0.0522
+  * form=7 severity=0.02
+      -> CRA = 0.0176
+  * form=7 severity=0.04
+      -> CRA = 0.0104
+  * form=7 severity=0.06
+      -> CRA = 0.0066
+  * form=7 severity=0.08
+      -> CRA = 0.0058
+  * form=7 severity=0.10
+      -> CRA = 0.0028
+  * form=8 severity=0.02
+      -> CRA = 0.1054
+  * form=8 severity=0.04
+      -> CRA = 0.0710
+  * form=8 severity=0.06
+      -> CRA = 0.0508
+  * form=8 severity=0.08
+      -> CRA = 0.0390
+  * form=8 severity=0.10
+      -> CRA = 0.0290
+  * form=9 severity=0.02
+      -> CRA = 0.1148
+  * form=9 severity=0.04
+      -> CRA = 0.0972
+  * form=9 severity=0.06
+      -> CRA = 0.0762
+  * form=9 severity=0.08
+      -> CRA = 0.0602
+  * form=9 severity=0.10
+      -> CRA = 0.0458
+  * form=10 severity=0.02
+      -> CRA = 0.0356
+  * form=10 severity=0.04
+      -> CRA = 0.0276
+  * form=10 severity=0.06
+      -> CRA = 0.0214
+  * form=10 severity=0.08
+      -> CRA = 0.0166
+  * form=10 severity=0.10
+      -> CRA = 0.0136
+  * form=11 severity=0.02
+      -> CRA = 0.1252
+  * form=11 severity=0.04
+      -> CRA = 0.0942
+  * form=11 severity=0.06
+      -> CRA = 0.0674
+  * form=11 severity=0.08
+      -> CRA = 0.0496
+  * form=11 severity=0.10
+      -> CRA = 0.0360
+  * form=12 severity=0.02
+      -> CRA = 0.3282
+  * form=12 severity=0.04
+      -> CRA = 0.2704
+  * form=12 severity=0.06
+      -> CRA = 0.2254
+  * form=12 severity=0.08
+      -> CRA = 0.1826
+  * form=12 severity=0.10
+      -> CRA = 0.1608
+  * form=13 severity=0.02
+      -> CRA = 0.1862
+  * form=13 severity=0.04
+      -> CRA = 0.1608
+  * form=13 severity=0.06
+      -> CRA = 0.1422
+  * form=13 severity=0.08
+      -> CRA = 0.1220
+  * form=13 severity=0.10
+      -> CRA = 0.1040
+  * form=14 severity=0.02
+      -> CRA = 0.0014
+  * form=14 severity=0.04
+      -> CRA = 0.0012
+  * form=14 severity=0.06
+      -> CRA = 0.0010
+  * form=14 severity=0.08
+      -> CRA = 0.0010
+  * form=14 severity=0.10
+      -> CRA = 0.0010
+  * form=15 severity=0.02
+      -> CRA = 0.6918
+  * form=15 severity=0.04
+      -> CRA = 0.6646
+  * form=15 severity=0.06
+      -> CRA = 0.6404
+  * form=15 severity=0.08
+      -> CRA = 0.6260
+  * form=15 severity=0.10
+      -> CRA = 0.5980
+✓ Completed certification for efficientnet_b3
+>>> Certification for model: vit_small_patch16_224
+  * form=1 severity=0.02
+      -> CRA = 0.0232
+  * form=1 severity=0.04
+      -> CRA = 0.0172
+  * form=1 severity=0.06
+      -> CRA = 0.0136
+  * form=1 severity=0.08
+      -> CRA = 0.0114
+  * form=1 severity=0.10
+      -> CRA = 0.0106
+  * form=2 severity=0.02
+      -> CRA = 0.0024
+  * form=2 severity=0.04
+      -> CRA = 0.0014
+  * form=2 severity=0.06
+      -> CRA = 0.0014
+  * form=2 severity=0.08
+      -> CRA = 0.0008
+  * form=2 severity=0.10
+      -> CRA = 0.0006
+  * form=3 severity=0.02
+      -> CRA = 0.0332
+  * form=3 severity=0.04
+      -> CRA = 0.0224
+  * form=3 severity=0.06
+      -> CRA = 0.0194
+  * form=3 severity=0.08
+      -> CRA = 0.0134
+  * form=3 severity=0.10
+      -> CRA = 0.0132
+  * form=4 severity=0.02
+      -> CRA = 0.0044
+  * form=4 severity=0.04
+      -> CRA = 0.0030
+  * form=4 severity=0.06
+      -> CRA = 0.0026
+  * form=4 severity=0.08
+      -> CRA = 0.0024
+  * form=4 severity=0.10
+      -> CRA = 0.0018
+  * form=5 severity=0.02
+      -> CRA = 0.0100
+  * form=5 severity=0.04
+      -> CRA = 0.0078
+  * form=5 severity=0.06
+      -> CRA = 0.0054
+  * form=5 severity=0.08
+      -> CRA = 0.0036
+  * form=5 severity=0.10
+      -> CRA = 0.0022
+  * form=6 severity=0.02
+      -> CRA = 0.0546
+  * form=6 severity=0.04
+      -> CRA = 0.0442
+  * form=6 severity=0.06
+      -> CRA = 0.0352
+  * form=6 severity=0.08
+      -> CRA = 0.0294
+  * form=6 severity=0.10
+      -> CRA = 0.0210
+  * form=7 severity=0.02
+      -> CRA = 0.0078
+  * form=7 severity=0.04
+      -> CRA = 0.0056
+  * form=7 severity=0.06
+      -> CRA = 0.0042
+  * form=7 severity=0.08
+      -> CRA = 0.0034
+  * form=7 severity=0.10
+      -> CRA = 0.0020
+  * form=8 severity=0.02
+      -> CRA = 0.0348
+  * form=8 severity=0.04
+      -> CRA = 0.0246
+  * form=8 severity=0.06
+      -> CRA = 0.0192
+  * form=8 severity=0.08
+      -> CRA = 0.0136
+  * form=8 severity=0.10
+      -> CRA = 0.0098
+  * form=9 severity=0.02
+      -> CRA = 0.0354
+  * form=9 severity=0.04
+      -> CRA = 0.0260
+  * form=9 severity=0.06
+      -> CRA = 0.0196
+  * form=9 severity=0.08
+      -> CRA = 0.0152
+  * form=9 severity=0.10
+      -> CRA = 0.0114
+  * form=10 severity=0.02
+      -> CRA = 0.0114
+  * form=10 severity=0.04
+      -> CRA = 0.0074
+  * form=10 severity=0.06
+      -> CRA = 0.0072
+  * form=10 severity=0.08
+      -> CRA = 0.0054
+  * form=10 severity=0.10
+      -> CRA = 0.0048
+  * form=11 severity=0.02
+      -> CRA = 0.0622
+  * form=11 severity=0.04
+      -> CRA = 0.0442
+  * form=11 severity=0.06
+      -> CRA = 0.0318
+  * form=11 severity=0.08
+      -> CRA = 0.0236
+  * form=11 severity=0.10
+      -> CRA = 0.0158
+  * form=12 severity=0.02
+      -> CRA = 0.1834
+  * form=12 severity=0.04
+      -> CRA = 0.1342
+  * form=12 severity=0.06
+      -> CRA = 0.1066
+  * form=12 severity=0.08
+      -> CRA = 0.0824
+  * form=12 severity=0.10
+      -> CRA = 0.0614
+  * form=13 severity=0.02
+      -> CRA = 0.0820
+  * form=13 severity=0.04
+      -> CRA = 0.0720
+  * form=13 severity=0.06
+      -> CRA = 0.0614
+  * form=13 severity=0.08
+      -> CRA = 0.0532
+  * form=13 severity=0.10
+      -> CRA = 0.0456
+  * form=14 severity=0.02
+      -> CRA = 0.0002
+  * form=14 severity=0.04
+      -> CRA = 0.0002
+  * form=14 severity=0.06
+      -> CRA = 0.0000
+  * form=14 severity=0.08
+      -> CRA = 0.0000
+  * form=14 severity=0.10
+      -> CRA = 0.0000
+  * form=15 severity=0.02
+      -> CRA = 0.5970
+  * form=15 severity=0.04
+      -> CRA = 0.5516
+  * form=15 severity=0.06
+      -> CRA = 0.5170
+  * form=15 severity=0.08
+      -> CRA = 0.4864
+  * form=15 severity=0.10
+      -> CRA = 0.4536
+✓ Completed certification for vit_small_patch16_224
+>>> Certification for model: resnet50_qaug
+  * form=1 severity=0.02
+      -> CRA = 0.1106
+  * form=1 severity=0.04
+      -> CRA = 0.0974
+  * form=1 severity=0.06
+      -> CRA = 0.0892
+  * form=1 severity=0.08
+      -> CRA = 0.0810
+  * form=1 severity=0.10
+      -> CRA = 0.0736
+  * form=2 severity=0.02
+      -> CRA = 0.0380
+  * form=2 severity=0.04
+      -> CRA = 0.0302
+  * form=2 severity=0.06
+      -> CRA = 0.0282
+  * form=2 severity=0.08
+      -> CRA = 0.0216
+  * form=2 severity=0.10
+      -> CRA = 0.0190
+  * form=3 severity=0.02
+      -> CRA = 0.1258
+  * form=3 severity=0.04
+      -> CRA = 0.1014
+  * form=3 severity=0.06
+      -> CRA = 0.0912
+  * form=3 severity=0.08
+      -> CRA = 0.0768
+  * form=3 severity=0.10
+      -> CRA = 0.0672
+  * form=4 severity=0.02
+      -> CRA = 0.0506
+  * form=4 severity=0.04
+      -> CRA = 0.0388
+  * form=4 severity=0.06
+      -> CRA = 0.0334
+  * form=4 severity=0.08
+      -> CRA = 0.0258
+  * form=4 severity=0.10
+      -> CRA = 0.0224
+  * form=5 severity=0.02
+      -> CRA = 0.0938
+  * form=5 severity=0.04
+      -> CRA = 0.0780
+  * form=5 severity=0.06
+      -> CRA = 0.0638
+  * form=5 severity=0.08
+      -> CRA = 0.0546
+  * form=5 severity=0.10
+      -> CRA = 0.0398
+  * form=6 severity=0.02
+      -> CRA = 0.1470
+  * form=6 severity=0.04
+      -> CRA = 0.1216
+  * form=6 severity=0.06
+      -> CRA = 0.1118
+  * form=6 severity=0.08
+      -> CRA = 0.0958
+  * form=6 severity=0.10
+      -> CRA = 0.0850
+  * form=7 severity=0.02
+      -> CRA = 0.0514
+  * form=7 severity=0.04
+      -> CRA = 0.0356
+  * form=7 severity=0.06
+      -> CRA = 0.0274
+  * form=7 severity=0.08
+      -> CRA = 0.0226
+  * form=7 severity=0.10
+      -> CRA = 0.0166
+  * form=8 severity=0.02
+      -> CRA = 0.1056
+  * form=8 severity=0.04
+      -> CRA = 0.0876
+  * form=8 severity=0.06
+      -> CRA = 0.0732
+  * form=8 severity=0.08
+      -> CRA = 0.0608
+  * form=8 severity=0.10
+      -> CRA = 0.0486
+  * form=9 severity=0.02
+      -> CRA = 0.1288
+  * form=9 severity=0.04
+      -> CRA = 0.1076
+  * form=9 severity=0.06
+      -> CRA = 0.0994
+  * form=9 severity=0.08
+      -> CRA = 0.0842
+  * form=9 severity=0.10
+      -> CRA = 0.0772
+  * form=10 severity=0.02
+      -> CRA = 0.0678
+  * form=10 severity=0.04
+      -> CRA = 0.0582
+  * form=10 severity=0.06
+      -> CRA = 0.0526
+  * form=10 severity=0.08
+      -> CRA = 0.0452
+  * form=10 severity=0.10
+      -> CRA = 0.0418
+  * form=11 severity=0.02
+      -> CRA = 0.0954
+  * form=11 severity=0.04
+      -> CRA = 0.0794
+  * form=11 severity=0.06
+      -> CRA = 0.0690
+  * form=11 severity=0.08
+      -> CRA = 0.0584
+  * form=11 severity=0.10
+      -> CRA = 0.0482
+  * form=12 severity=0.02
+      -> CRA = 0.2622
+  * form=12 severity=0.04
+      -> CRA = 0.2354
+  * form=12 severity=0.06
+      -> CRA = 0.2188
+  * form=12 severity=0.08
+      -> CRA = 0.1984
+  * form=12 severity=0.10
+      -> CRA = 0.1848
+  * form=13 severity=0.02
+      -> CRA = 0.1290
+  * form=13 severity=0.04
+      -> CRA = 0.1170
+  * form=13 severity=0.06
+      -> CRA = 0.1072
+  * form=13 severity=0.08
+      -> CRA = 0.1002
+  * form=13 severity=0.10
+      -> CRA = 0.0912
+  * form=14 severity=0.02
+      -> CRA = 0.0012
+  * form=14 severity=0.04
+      -> CRA = 0.0010
+  * form=14 severity=0.06
+      -> CRA = 0.0008
+  * form=14 severity=0.08
+      -> CRA = 0.0004
+  * form=14 severity=0.10
+      -> CRA = 0.0008
+  * form=15 severity=0.02
+      -> CRA = 0.4172
+  * form=15 severity=0.04
+      -> CRA = 0.3962
+  * form=15 severity=0.06
+      -> CRA = 0.3758
+  * form=15 severity=0.08
+      -> CRA = 0.3588
+  * form=15 severity=0.10
+      -> CRA = 0.3398
+✓ Completed certification for resnet50_qaug
+>>> Certification for model: efficientnet_b3_qaug
+  * form=1 severity=0.02
+      -> CRA = 0.1528
+  * form=1 severity=0.04
+      -> CRA = 0.1322
+  * form=1 severity=0.06
+      -> CRA = 0.1158
+  * form=1 severity=0.08
+      -> CRA = 0.1054
+  * form=1 severity=0.10
+      -> CRA = 0.0960
+  * form=2 severity=0.02
+      -> CRA = 0.0506
+  * form=2 severity=0.04
+      -> CRA = 0.0382
+  * form=2 severity=0.06
+      -> CRA = 0.0320
+  * form=2 severity=0.08
+      -> CRA = 0.0280
+  * form=2 severity=0.10
+      -> CRA = 0.0218
+  * form=3 severity=0.02
+      -> CRA = 0.1506
+  * form=3 severity=0.04
+      -> CRA = 0.1232
+  * form=3 severity=0.06
+      -> CRA = 0.1012
+  * form=3 severity=0.08
+      -> CRA = 0.0904
+  * form=3 severity=0.10
+      -> CRA = 0.0786
+  * form=4 severity=0.02
+      -> CRA = 0.0564
+  * form=4 severity=0.04
+      -> CRA = 0.0438
+  * form=4 severity=0.06
+      -> CRA = 0.0360
+  * form=4 severity=0.08
+      -> CRA = 0.0284
+  * form=4 severity=0.10
+      -> CRA = 0.0232
+  * form=5 severity=0.02
+      -> CRA = 0.0856
+  * form=5 severity=0.04
+      -> CRA = 0.0674
+  * form=5 severity=0.06
+      -> CRA = 0.0526
+  * form=5 severity=0.08
+      -> CRA = 0.0444
+  * form=5 severity=0.10
+      -> CRA = 0.0348
+  * form=6 severity=0.02
+      -> CRA = 0.1764
+  * form=6 severity=0.04
+      -> CRA = 0.1518
+  * form=6 severity=0.06
+      -> CRA = 0.1346
+  * form=6 severity=0.08
+      -> CRA = 0.1158
+  * form=6 severity=0.10
+      -> CRA = 0.1036
+  * form=7 severity=0.02
+      -> CRA = 0.0630
+  * form=7 severity=0.04
+      -> CRA = 0.0424
+  * form=7 severity=0.06
+      -> CRA = 0.0342
+  * form=7 severity=0.08
+      -> CRA = 0.0296
+  * form=7 severity=0.10
+      -> CRA = 0.0218
+  * form=8 severity=0.02
+      -> CRA = 0.1158
+  * form=8 severity=0.04
+      -> CRA = 0.0926
+  * form=8 severity=0.06
+      -> CRA = 0.0784
+  * form=8 severity=0.08
+      -> CRA = 0.0660
+  * form=8 severity=0.10
+      -> CRA = 0.0538
+  * form=9 severity=0.02
+      -> CRA = 0.1316
+  * form=9 severity=0.04
+      -> CRA = 0.1082
+  * form=9 severity=0.06
+      -> CRA = 0.0928
+  * form=9 severity=0.08
+      -> CRA = 0.0810
+  * form=9 severity=0.10
+      -> CRA = 0.0658
+  * form=10 severity=0.02
+      -> CRA = 0.0946
+  * form=10 severity=0.04
+      -> CRA = 0.0772
+  * form=10 severity=0.06
+      -> CRA = 0.0648
+  * form=10 severity=0.08
+      -> CRA = 0.0592
+  * form=10 severity=0.10
+      -> CRA = 0.0456
+  * form=11 severity=0.02
+      -> CRA = 0.1282
+  * form=11 severity=0.04
+      -> CRA = 0.1048
+  * form=11 severity=0.06
+      -> CRA = 0.0912
+  * form=11 severity=0.08
+      -> CRA = 0.0758
+  * form=11 severity=0.10
+      -> CRA = 0.0680
+  * form=12 severity=0.02
+      -> CRA = 0.2872
+  * form=12 severity=0.04
+      -> CRA = 0.2484
+  * form=12 severity=0.06
+      -> CRA = 0.2300
+  * form=12 severity=0.08
+      -> CRA = 0.2030
+  * form=12 severity=0.10
+      -> CRA = 0.1904
+  * form=13 severity=0.02
+      -> CRA = 0.1948
+  * form=13 severity=0.04
+      -> CRA = 0.1742
+  * form=13 severity=0.06
+      -> CRA = 0.1592
+  * form=13 severity=0.08
+      -> CRA = 0.1420
+  * form=13 severity=0.10
+      -> CRA = 0.1290
+  * form=14 severity=0.02
+      -> CRA = 0.0012
+  * form=14 severity=0.04
+      -> CRA = 0.0010
+  * form=14 severity=0.06
+      -> CRA = 0.0006
+  * form=14 severity=0.08
+      -> CRA = 0.0004
+  * form=14 severity=0.10
+      -> CRA = 0.0006
+  * form=15 severity=0.02
+      -> CRA = 0.4664
+  * form=15 severity=0.04
+      -> CRA = 0.4390
+  * form=15 severity=0.06
+      -> CRA = 0.4230
+  * form=15 severity=0.08
+      -> CRA = 0.4020
+  * form=15 severity=0.10
+      -> CRA = 0.3830
+✓ Completed certification for efficientnet_b3_qaug
+>>> Certification for model: vit_small_patch16_224_qaug
+  * form=1 severity=0.02
+      -> CRA = 0.2130
+  * form=1 severity=0.04
+      -> CRA = 0.1880
+  * form=1 severity=0.06
+      -> CRA = 0.1782
+  * form=1 severity=0.08
+      -> CRA = 0.1688
+  * form=1 severity=0.10
+      -> CRA = 0.1536
+  * form=2 severity=0.02
+      -> CRA = 0.0940
+  * form=2 severity=0.04
+      -> CRA = 0.0786
+  * form=2 severity=0.06
+      -> CRA = 0.0722
+  * form=2 severity=0.08
+      -> CRA = 0.0630
+  * form=2 severity=0.10
+      -> CRA = 0.0582
+  * form=3 severity=0.02
+      -> CRA = 0.2192
+  * form=3 severity=0.04
+      -> CRA = 0.1948
+  * form=3 severity=0.06
+      -> CRA = 0.1796
+  * form=3 severity=0.08
+      -> CRA = 0.1574
+  * form=3 severity=0.10
+      -> CRA = 0.1494
+  * form=4 severity=0.02
+      -> CRA = 0.0654
+  * form=4 severity=0.04
+      -> CRA = 0.0570
+  * form=4 severity=0.06
+      -> CRA = 0.0508
+  * form=4 severity=0.08
+      -> CRA = 0.0444
+  * form=4 severity=0.10
+      -> CRA = 0.0388
+  * form=5 severity=0.02
+      -> CRA = 0.1034
+  * form=5 severity=0.04
+      -> CRA = 0.0880
+  * form=5 severity=0.06
+      -> CRA = 0.0754
+  * form=5 severity=0.08
+      -> CRA = 0.0642
+  * form=5 severity=0.10
+      -> CRA = 0.0574
+  * form=6 severity=0.02
+      -> CRA = 0.2418
+  * form=6 severity=0.04
+      -> CRA = 0.2202
+  * form=6 severity=0.06
+      -> CRA = 0.2010
+  * form=6 severity=0.08
+      -> CRA = 0.1892
+  * form=6 severity=0.10
+      -> CRA = 0.1808
+  * form=7 severity=0.02
+      -> CRA = 0.0976
+  * form=7 severity=0.04
+      -> CRA = 0.0778
+  * form=7 severity=0.06
+      -> CRA = 0.0674
+  * form=7 severity=0.08
+      -> CRA = 0.0558
+  * form=7 severity=0.10
+      -> CRA = 0.0506
+  * form=8 severity=0.02
+      -> CRA = 0.1634
+  * form=8 severity=0.04
+      -> CRA = 0.1414
+  * form=8 severity=0.06
+      -> CRA = 0.1264
+  * form=8 severity=0.08
+      -> CRA = 0.1152
+  * form=8 severity=0.10
+      -> CRA = 0.1036
+  * form=9 severity=0.02
+      -> CRA = 0.1752
+  * form=9 severity=0.04
+      -> CRA = 0.1564
+  * form=9 severity=0.06
+      -> CRA = 0.1440
+  * form=9 severity=0.08
+      -> CRA = 0.1316
+  * form=9 severity=0.10
+      -> CRA = 0.1184
+  * form=10 severity=0.02
+      -> CRA = 0.1238
+  * form=10 severity=0.04
+      -> CRA = 0.1076
+  * form=10 severity=0.06
+      -> CRA = 0.0988
+  * form=10 severity=0.08
+      -> CRA = 0.0914
+  * form=10 severity=0.10
+      -> CRA = 0.0766
+  * form=11 severity=0.02
+      -> CRA = 0.1878
+  * form=11 severity=0.04
+      -> CRA = 0.1638
+  * form=11 severity=0.06
+      -> CRA = 0.1532
+  * form=11 severity=0.08
+      -> CRA = 0.1394
+  * form=11 severity=0.10
+      -> CRA = 0.1252
+  * form=12 severity=0.02
+      -> CRA = 0.3036
+  * form=12 severity=0.04
+      -> CRA = 0.2786
+  * form=12 severity=0.06
+      -> CRA = 0.2574
+  * form=12 severity=0.08
+      -> CRA = 0.2438
+  * form=12 severity=0.10
+      -> CRA = 0.2246
+  * form=13 severity=0.02
+      -> CRA = 0.2776
+  * form=13 severity=0.04
+      -> CRA = 0.2504
+  * form=13 severity=0.06
+      -> CRA = 0.2400
+  * form=13 severity=0.08
+      -> CRA = 0.2264
+  * form=13 severity=0.10
+      -> CRA = 0.2166
+  * form=14 severity=0.02
+      -> CRA = 0.0032
+  * form=14 severity=0.04
+      -> CRA = 0.0022
+  * form=14 severity=0.06
+      -> CRA = 0.0020
+  * form=14 severity=0.08
+      -> CRA = 0.0018
+  * form=14 severity=0.10
+      -> CRA = 0.0018
+  * form=15 severity=0.02
+      -> CRA = 0.4772
+  * form=15 severity=0.04
+      -> CRA = 0.4478
+  * form=15 severity=0.06
+      -> CRA = 0.4362
+  * form=15 severity=0.08
+      -> CRA = 0.4248
+  * form=15 severity=0.10
+      -> CRA = 0.4060
+✓ Completed certification for vit_small_patch16_224_qaug
+>>> Certification for model: Hendrycks2020AugMix
+  * form=1 severity=0.02
+      -> CRA = 0.0500
+  * form=1 severity=0.04
+      -> CRA = 0.0376
+  * form=1 severity=0.06
+      -> CRA = 0.0302
+  * form=1 severity=0.08
+      -> CRA = 0.0254
+  * form=1 severity=0.10
+      -> CRA = 0.0212
+  * form=2 severity=0.02
+      -> CRA = 0.0062
+  * form=2 severity=0.04
+      -> CRA = 0.0042
+  * form=2 severity=0.06
+      -> CRA = 0.0026
+  * form=2 severity=0.08
+      -> CRA = 0.0014
+  * form=2 severity=0.10
+      -> CRA = 0.0018
+  * form=3 severity=0.02
+      -> CRA = 0.0616
+  * form=3 severity=0.04
+      -> CRA = 0.0478
+  * form=3 severity=0.06
+      -> CRA = 0.0368
+  * form=3 severity=0.08
+      -> CRA = 0.0278
+  * form=3 severity=0.10
+      -> CRA = 0.0204
+  * form=4 severity=0.02
+      -> CRA = 0.0104
+  * form=4 severity=0.04
+      -> CRA = 0.0064
+  * form=4 severity=0.06
+      -> CRA = 0.0048
+  * form=4 severity=0.08
+      -> CRA = 0.0038
+  * form=4 severity=0.10
+      -> CRA = 0.0024
+  * form=5 severity=0.02
+      -> CRA = 0.0600
+  * form=5 severity=0.04
+      -> CRA = 0.0362
+  * form=5 severity=0.06
+      -> CRA = 0.0210
+  * form=5 severity=0.08
+      -> CRA = 0.0148
+  * form=5 severity=0.10
+      -> CRA = 0.0088
+  * form=6 severity=0.02
+      -> CRA = 0.1550
+  * form=6 severity=0.04
+      -> CRA = 0.1274
+  * form=6 severity=0.06
+      -> CRA = 0.1002
+  * form=6 severity=0.08
+      -> CRA = 0.0870
+  * form=6 severity=0.10
+      -> CRA = 0.0630
+  * form=7 severity=0.02
+      -> CRA = 0.0124
+  * form=7 severity=0.04
+      -> CRA = 0.0082
+  * form=7 severity=0.06
+      -> CRA = 0.0052
+  * form=7 severity=0.08
+      -> CRA = 0.0036
+  * form=7 severity=0.10
+      -> CRA = 0.0026
+  * form=8 severity=0.02
+      -> CRA = 0.1072
+  * form=8 severity=0.04
+      -> CRA = 0.0772
+  * form=8 severity=0.06
+      -> CRA = 0.0524
+  * form=8 severity=0.08
+      -> CRA = 0.0390
+  * form=8 severity=0.10
+      -> CRA = 0.0288
+  * form=9 severity=0.02
+      -> CRA = 0.0918
+  * form=9 severity=0.04
+      -> CRA = 0.0684
+  * form=9 severity=0.06
+      -> CRA = 0.0550
+  * form=9 severity=0.08
+      -> CRA = 0.0472
+  * form=9 severity=0.10
+      -> CRA = 0.0330
+  * form=10 severity=0.02
+      -> CRA = 0.0352
+  * form=10 severity=0.04
+      -> CRA = 0.0266
+  * form=10 severity=0.06
+      -> CRA = 0.0206
+  * form=10 severity=0.08
+      -> CRA = 0.0166
+  * form=10 severity=0.10
+      -> CRA = 0.0124
+  * form=11 severity=0.02
+      -> CRA = 0.1066
+  * form=11 severity=0.04
+      -> CRA = 0.0814
+  * form=11 severity=0.06
+      -> CRA = 0.0570
+  * form=11 severity=0.08
+      -> CRA = 0.0424
+  * form=11 severity=0.10
+      -> CRA = 0.0288
+  * form=12 severity=0.02
+      -> CRA = 0.3400
+  * form=12 severity=0.04
+      -> CRA = 0.2804
+  * form=12 severity=0.06
+      -> CRA = 0.2298
+  * form=12 severity=0.08
+      -> CRA = 0.1874
+  * form=12 severity=0.10
+      -> CRA = 0.1516
+  * form=13 severity=0.02
+      -> CRA = 0.1688
+  * form=13 severity=0.04
+      -> CRA = 0.1362
+  * form=13 severity=0.06
+      -> CRA = 0.1184
+  * form=13 severity=0.08
+      -> CRA = 0.1012
+  * form=13 severity=0.10
+      -> CRA = 0.0870
+  * form=14 severity=0.02
+      -> CRA = 0.0016
+  * form=14 severity=0.04
+      -> CRA = 0.0012
+  * form=14 severity=0.06
+      -> CRA = 0.0010
+  * form=14 severity=0.08
+      -> CRA = 0.0010
+  * form=14 severity=0.10
+      -> CRA = 0.0008
+  * form=15 severity=0.02
+      -> CRA = 0.6956
+  * form=15 severity=0.04
+      -> CRA = 0.6642
+  * form=15 severity=0.06
+      -> CRA = 0.6310
+  * form=15 severity=0.08
+      -> CRA = 0.5960
+  * form=15 severity=0.10
+      -> CRA = 0.5542
+✓ Completed certification for Hendrycks2020AugMix
+>>> Certification for model: Erichson2022NoisyMix_new
+  * form=1 severity=0.02
+      -> CRA = 0.0526
+  * form=1 severity=0.04
+      -> CRA = 0.0416
+  * form=1 severity=0.06
+      -> CRA = 0.0342
+  * form=1 severity=0.08
+      -> CRA = 0.0302
+  * form=1 severity=0.10
+      -> CRA = 0.0234
+  * form=2 severity=0.02
+      -> CRA = 0.0074
+  * form=2 severity=0.04
+      -> CRA = 0.0040
+  * form=2 severity=0.06
+      -> CRA = 0.0032
+  * form=2 severity=0.08
+      -> CRA = 0.0020
+  * form=2 severity=0.10
+      -> CRA = 0.0020
+  * form=3 severity=0.02
+      -> CRA = 0.0748
+  * form=3 severity=0.04
+      -> CRA = 0.0556
+  * form=3 severity=0.06
+      -> CRA = 0.0424
+  * form=3 severity=0.08
+      -> CRA = 0.0324
+  * form=3 severity=0.10
+      -> CRA = 0.0240
+  * form=4 severity=0.02
+      -> CRA = 0.0138
+  * form=4 severity=0.04
+      -> CRA = 0.0108
+  * form=4 severity=0.06
+      -> CRA = 0.0080
+  * form=4 severity=0.08
+      -> CRA = 0.0062
+  * form=4 severity=0.10
+      -> CRA = 0.0052
+  * form=5 severity=0.02
+      -> CRA = 0.0790
+  * form=5 severity=0.04
+      -> CRA = 0.0528
+  * form=5 severity=0.06
+      -> CRA = 0.0340
+  * form=5 severity=0.08
+      -> CRA = 0.0230
+  * form=5 severity=0.10
+      -> CRA = 0.0162
+  * form=6 severity=0.02
+      -> CRA = 0.1618
+  * form=6 severity=0.04
+      -> CRA = 0.1314
+  * form=6 severity=0.06
+      -> CRA = 0.1064
+  * form=6 severity=0.08
+      -> CRA = 0.0838
+  * form=6 severity=0.10
+      -> CRA = 0.0652
+  * form=7 severity=0.02
+      -> CRA = 0.0194
+  * form=7 severity=0.04
+      -> CRA = 0.0146
+  * form=7 severity=0.06
+      -> CRA = 0.0094
+  * form=7 severity=0.08
+      -> CRA = 0.0066
+  * form=7 severity=0.10
+      -> CRA = 0.0046
+  * form=8 severity=0.02
+      -> CRA = 0.1122
+  * form=8 severity=0.04
+      -> CRA = 0.0856
+  * form=8 severity=0.06
+      -> CRA = 0.0646
+  * form=8 severity=0.08
+      -> CRA = 0.0456
+  * form=8 severity=0.10
+      -> CRA = 0.0352
+  * form=9 severity=0.02
+      -> CRA = 0.0960
+  * form=9 severity=0.04
+      -> CRA = 0.0780
+  * form=9 severity=0.06
+      -> CRA = 0.0632
+  * form=9 severity=0.08
+      -> CRA = 0.0512
+  * form=9 severity=0.10
+      -> CRA = 0.0382
+  * form=10 severity=0.02
+      -> CRA = 0.0374
+  * form=10 severity=0.04
+      -> CRA = 0.0288
+  * form=10 severity=0.06
+      -> CRA = 0.0222
+  * form=10 severity=0.08
+      -> CRA = 0.0186
+  * form=10 severity=0.10
+      -> CRA = 0.0142
+  * form=11 severity=0.02
+      -> CRA = 0.1104
+  * form=11 severity=0.04
+      -> CRA = 0.0824
+  * form=11 severity=0.06
+      -> CRA = 0.0604
+  * form=11 severity=0.08
+      -> CRA = 0.0496
+  * form=11 severity=0.10
+      -> CRA = 0.0342
+  * form=12 severity=0.02
+      -> CRA = 0.3940
+  * form=12 severity=0.04
+      -> CRA = 0.3420
+  * form=12 severity=0.06
+      -> CRA = 0.2908
+  * form=12 severity=0.08
+      -> CRA = 0.2414
+  * form=12 severity=0.10
+      -> CRA = 0.1970
+  * form=13 severity=0.02
+      -> CRA = 0.1608
+  * form=13 severity=0.04
+      -> CRA = 0.1410
+  * form=13 severity=0.06
+      -> CRA = 0.1206
+  * form=13 severity=0.08
+      -> CRA = 0.1022
+  * form=13 severity=0.10
+      -> CRA = 0.0866
+  * form=14 severity=0.02
+      -> CRA = 0.0024
+  * form=14 severity=0.04
+      -> CRA = 0.0020
+  * form=14 severity=0.06
+      -> CRA = 0.0018
+  * form=14 severity=0.08
+      -> CRA = 0.0014
+  * form=14 severity=0.10
+      -> CRA = 0.0010
+  * form=15 severity=0.02
+      -> CRA = 0.6988
+  * form=15 severity=0.04
+      -> CRA = 0.6734
+  * form=15 severity=0.06
+      -> CRA = 0.6454
+  * form=15 severity=0.08
+      -> CRA = 0.6180
+  * form=15 severity=0.10
+      -> CRA = 0.5790
+✓ Completed certification for Erichson2022NoisyMix_new
+✓ All certifications done → metrics/certify_sweep.csv

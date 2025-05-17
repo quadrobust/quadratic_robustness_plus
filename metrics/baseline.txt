@@ -1,0 +1,38 @@
+================ Baseline + Robust ================
+(clean – ImageNet-val,  QC – Quadratic-C)
+==================================================
+resnet50 std  eps=0.10  clean=80.10  qc=22.16
+resnet50 std  eps=0.15  clean=80.10  qc=19.85
+resnet50 std  eps=0.20  clean=80.10  qc=17.40
+resnet50 std  eps=0.25  clean=80.10  qc=14.83
+resnet50 std  eps=0.30  clean=80.10  qc=11.89
+resnet50 std  eps=0.50  clean=80.10  qc=4.98
+
+efficientnet_b3 std  eps=0.10  clean=78.55  qc=17.79
+efficientnet_b3 std  eps=0.15  clean=78.55  qc=16.12
+efficientnet_b3 std  eps=0.20  clean=78.55  qc=14.44
+efficientnet_b3 std  eps=0.25  clean=78.55  qc=12.25
+efficientnet_b3 std  eps=0.30  clean=78.55  qc=10.21
+efficientnet_b3 std  eps=0.50  clean=78.55  qc=4.46
+
+vit_small_patch16_224 std  eps=0.10  clean=74.63  qc=11.76
+vit_small_patch16_224 std  eps=0.15  clean=74.63  qc=10.38
+vit_small_patch16_224 std  eps=0.20  clean=74.63  qc=9.07
+vit_small_patch16_224 std  eps=0.25  clean=74.63  qc=7.40
+vit_small_patch16_224 std  eps=0.30  clean=74.63  qc=5.97
+vit_small_patch16_224 std  eps=0.50  clean=74.63  qc=2.67
+
+Hendrycks2020AugMix robust  eps=0.10  clean=77.53  qc=15.98
+Hendrycks2020AugMix robust  eps=0.15  clean=77.53  qc=13.98
+Hendrycks2020AugMix robust  eps=0.20  clean=77.53  qc=11.95
+Hendrycks2020AugMix robust  eps=0.25  clean=77.53  qc=9.90
+Hendrycks2020AugMix robust  eps=0.30  clean=77.53  qc=8.14
+Hendrycks2020AugMix robust  eps=0.50  clean=77.53  qc=3.43
+
+Erichson2022NoisyMix_new robust  eps=0.10  clean=77.05  qc=16.32
+Erichson2022NoisyMix_new robust  eps=0.15  clean=77.05  qc=13.98
+Erichson2022NoisyMix_new robust  eps=0.20  clean=77.05  qc=12.24
+Erichson2022NoisyMix_new robust  eps=0.25  clean=77.05  qc=10.19
+Erichson2022NoisyMix_new robust  eps=0.30  clean=77.05  qc=8.31
+Erichson2022NoisyMix_new robust  eps=0.50  clean=77.05  qc=3.40
+
