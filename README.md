@@ -1,23 +1,24 @@
 # Quadratic‑C & QuadraticAug
 
-Robustness to **Smooth Quadratic Warps**
+### Robustness to **Smooth Quadratic Warps** in ImageNet models
 
-> Reference implementation for the NeurIPS 2025 paper:
-> **“Robustness to Smooth Quadratic Warps: The Quadratic‑C Benchmark and a Simple Data Augmentation.”**
->
-> This repo provides the benchmark, augmentation, training scripts, attacks and a deterministic certificate used in the paper.
+This repository accompanies our <u>research submission</u> on spatial robustness.  It contains 
+
+* **Quadratic‑C** — an ImageNet‑val corruption benchmark built from 15 canonical *degree‑2* warps,
+* **QuadraticAug** — a drop‑in `torchvision` transform that samples random quadratic warps during training,
+* reference **training, evaluation, attack and certification** scripts reproducing the results in the paper draft.
+
+The goal is to make it straightforward to **(i)** measure how fragile a vision backbone is to smooth non‑affine distortions and **(ii)** close part of that gap with a single data‑augmentation line.
 
 ---
 
 ## Table of Contents
 
 1. [Repository Layout](#repository-layout)
-2. [Quick‑start](#quick-start)
-      2.1 Install the environment  |  2.2 Download ImageNet‑val  
+2. [Quick‑start](#quick-start)  
 3. [Running Experiments](#running-experiments)
-4. [Reproducing Paper Results](#reproducing-paper-results)
-5. [Python API](#python-api)
-8. [License](#license)
+4. [Reproducing paper numbers](#reproducing-paper-results)
+5. [License](#license)
 
 
 ---
@@ -44,7 +45,6 @@ Robustness to **Smooth Quadratic Warps**
 │   │   └── finetune_quadaug.py  # Fine‑tune backbone with QuadraticAug
 │   └── utils/
 │       └── compute_log.py       # Lightweight JSONL runtime/metric logger
-│
 ├── scripts/                     # Convenience bash wrappers
 │   ├── certify.sh               # Run CRA certificate sweep
 │   ├── eval_baseline.sh         # Evaluate pretrained models
@@ -59,19 +59,16 @@ Robustness to **Smooth Quadratic Warps**
 
 ## Quick‑start
 
-### 2.1 Install the environment
+### 1 Clone & install
 
 ```bash
-# clone
 git clone https://github.com/quadrobust/quadratic_robustness_plus.git
 cd quadratic_robustness_plus
-
-# create conda env
 conda env create -f env.yml
 conda activate quadrob
 ```
 
-### 2.2 Download **ImageNet‑1k validation** split
+### 2 Download **ImageNet‑1k validation** split
 
 Only the 50 000 validation JPEGs are needed (≈6.3 GB).
 
@@ -90,19 +87,46 @@ python scripts/prepare_imagenet_val.py --root data/imagenet
 
 ## Running experiments
 
-*All commands assume the repository root and a valid `IMAGENET_ROOT`.*
+Below commands assume you are in the repo root and `$IMAGENET_ROOT` is set.
 
-| Task                                        | Command                                                                 | Output                           |
-| ------------------------------------------- | ----------------------------------------------------------------------- | -------------------------------- |
-| **Baseline accuracy** (clean & Quadratic‑C) | `bash scripts/eval_baseline.sh`                                         | `metrics/baseline.csv`           |
-| **Fine‑tune with QuadraticAug**             | `python src/train/finetune_quadaug.py --model resnet50 --epochs 10 ...` | `models/resnet50_qaug.pth` + log |
-| **Evaluate fine‑tuned**                     | `bash scripts/eval_finetuned.sh`                                        | `metrics/finetuned.csv`          |
-| **Adaptive quadratic‑PGD attack**           | `bash scripts/run_attack.sh`                                            | `metrics/attack.csv`             |
-| **Certified Robust Accuracy (CRA)**         | `bash scripts/certify.sh`                                               | `metrics/cra.csv`                |
+1. **Baseline accuracy (clean + Quadratic‑C)**
 
-See each script for optional flags (severity list, grid size, checkpoint paths, wandb logging, …).
+   ```bash
+   bash scripts/eval_baseline.sh        # writes metrics/baseline.csv
+   ```
+2. **Fine‑tune a backbone with QuadraticAug**
 
+   ```bash
+   python src/train/finetune_quadaug.py \
+          --model resnet50 --epochs 10 --batch-size 128 \
+          --p 0.7 --eps-aff 0.3 --eps-trans 0.3 \
+          --save-path models/resnet50_qaug.pth
+   ```
+3. **Evaluate the fine‑tuned checkpoint**
 
+   ```bash
+   bash scripts/eval_finetuned.sh       # outputs metrics/finetuned.csv
+   ```
+4. **Adaptive quadratic‑PGD attack**
+
+   ```bash
+   bash scripts/run_attack.sh           # outputs metrics/attack.csv
+   ```
+5. **Deterministic certificate (CRA)**
+
+   ```bash
+   bash scripts/certify.sh              # outputs metrics/cra.csv
+   ```
+
+Each shell wrapper simply passes sane defaults to the underlying Python module—you can open them to tweak severity lists, grid size, logging options, etc.
+
+---
+
+## Reproducing paper numbers
+
+Running all five steps above for each backbone recreates the CSV files that back every figure/table in the submission.
+
+Hardware used in the paper: **1× NVIDIA A100 80 GB**, runtime ≈24 GPU‑hours total.
 
 ---
 
@@ -110,3 +134,4 @@ See each script for optional flags (severity list, grid size, checkpoint paths, 
 
 *Code* is released under the MIT License.
 Quadratic‑C images are generated on‑the‑fly from the original **ImageNet‑1k validation** set, which is licensed for non‑commercial research – you must separately agree to the ImageNet terms.
+
