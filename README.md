@@ -1,14 +1,18 @@
-# Quadratic‑C & QuadraticAug
+# Quadratic‑C & QuadraticAug
 
-### Robustness to **Smooth Quadratic Warps** in ImageNet models
+> **Benchmark & augmentation for non‑affine spatial robustness**
 
-This repository accompanies our <u>research submission</u> on spatial robustness.  It contains 
+This repository accompanies our paper *“Robustness to Smooth Quadratic Warps: The Quadratic‑C Benchmark and a Simple Data Augmentation”*.
+It contains everything needed to **evaluate** existing ImageNet models under quadratic warps and to **train** new models that handle them better.
 
-* **Quadratic‑C** — an ImageNet‑val corruption benchmark built from 15 canonical *degree‑2* warps,
-* **QuadraticAug** — a drop‑in `torchvision` transform that samples random quadratic warps during training,
-* reference **training, evaluation, attack and certification** scripts reproducing the results in the paper draft.
+* **Quadratic‑C** – a corruption benchmark built from 15 canonical degree‑2 warps, rendered on the fly.
+* **QuadraticAug** – a single‑line `torchvision` transform that samples random quadratic warps during training.
+* End‑to‑end scripts for baseline evaluation, fine‑tuning, adaptive attack, and a deterministic robustness certificate.
 
-The goal is to make it straightforward to **(i)** measure how fragile a vision backbone is to smooth non‑affine distortions and **(ii)** close part of that gap with a single data‑augmentation line.
+Our aim is to make it painless to
+
+1. quantify how severely quadratic distortions break a vision backbone, and
+2. close part of that gap with a lightweight data‑augmentation pass.
 
 ---
 
@@ -145,5 +149,7 @@ Our own experiments were carried out under an approved **academic ImageNet licen
 **By running any script in this repo you acknowledge that you have a valid licence and that you comply with its conditions.**  Commercial use requires a separate agreement with the ImageNet administrators.
 
 ---
+
+
 
 
