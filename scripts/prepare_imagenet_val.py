@@ -1,35 +1,24 @@
 #!/usr/bin/env python3
-"""
-ImageNet Validation Set Organizer
 
-This script restructures the ImageNet validation dataset by:
+# prepare_imagenet_val.py
+#
+# Restructures the 50 000 ImageNet-1k validation JPEGs into a
+# class-folder layout for torchvision.datasets.ImageFolder.
+# 
+# Steps:
+#   1. Read ground-truth WNIDs from ILSVRC devkit.
+#   2. Sort all .JPEG files alphabetically.
+#   3. Move each image into data/imagenet/<wnid>/
+#   4. Consolidate those folders under data/imagenet/val/
+#   5. Load meta.mat to map numeric synset IDs (n1…n1000) to actual WNIDs.
+#   6. Rename n<ID> directories to their correct synset names.
+#
+# Usage:
+#   python prepare_imagenet_val.py --root data/imagenet
+#
+# After running, you will have:
+#   data/imagenet/val/<WNID>/<image>.JPEG
 
-1. Reading the ground-truth labels for the 50,000 validation images.
-2. Sorting image files alphabetically.
-3. Moving each image into a folder named by its WordNet ID (WNID).
-4. Creating a unified "val" directory containing all WNID subfolders.
-5. Loading the devkit metadata to map numeric synset IDs (n1, n2, ..., n1000) to correct WNIDs.
-6. Renaming each n<id> directory to its proper synset name.
-
-All user-facing messages and log output are in English.
-
-Dependencies:
-    - Python 3.6+
-    - numpy
-    - scipy
-
-Usage:
-    Ensure the following structure under your working directory:
-        data/imagenet/
-            ILSVRC2012_devkit_t12/
-                data/meta.mat
-                data/ILSVRC2012_validation_ground_truth.txt
-            *.JPEG (50k validation images)
-
-    Then run:
-        python organize_imagenet_val.py
-
-"""
 import os
 import sys
 import glob
