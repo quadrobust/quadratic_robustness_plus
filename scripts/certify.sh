@@ -1,30 +1,59 @@
 #!/usr/bin/env bash
+
+
+#
+# certify.sh
+#
+# Perform deterministic certification (CRA) via exhaustive enumeration
+# over a grid of quadratic warp parameters for multiple models.
+#
+# For each model, canonical form, and severity level ε, this script:
+#   1) Loads a fixed subset of ImageNet-val (5 000 images)
+#   2) Builds a DataLoader with clean inputs
+#   3) Calls certify_instance() to compute:
+#        • CRA (Certified Robust Accuracy)
+#        • mean_acc  (average accuracy over grid)
+#        • worst_acc (minimum accuracy over grid)
+#   4) Records results in CSV and TXT logs
+#
+# Outputs:
+#   • metrics/certify_sweep.csv – CSV columns:
+#       model,form_id,severity,grid_size,CRA,mean_acc,worst_acc
+#   • metrics/certify_sweep.txt – human-readable progress log
+#
+# Usage:
+#   bash scripts/certify.sh
+#
+
+
 set -euo pipefail
 
 # ───────────────────────────────────────────────────────
+# 1) Locate project root and update PYTHONPATH
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 export PYTHONPATH="$ROOT:${PYTHONPATH:-}"
 # ───────────────────────────────────────────────────────
 
-# Modele do certyfikacji
+# 2) Models to certify (standard, QAug-fine-tuned, robust-bench)
 MODELS=(resnet50 efficientnet_b3 vit_small_patch16_224 \
         resnet50_qaug efficientnet_b3_qaug vit_small_patch16_224_qaug \
         Hendrycks2020AugMix Erichson2022NoisyMix_new)
 
+# 3) Certification parameters
 BATCH=48
 SUBSET=5000
 SEV_LIST=(0.02 0.04 0.06 0.08 0.10)
 GRID=5   # liczba punktów w gridzie (np. 5×5)
 
+# 4) Prepare output logs
 mkdir -p metrics
 CSV=metrics/certify_sweep.csv
 TXT=metrics/certify_sweep.txt
 
-# Nagłówki
 echo "=== Quadratic Certification Sweep ===" > $TXT
 echo "model,form_id,severity,grid_size,CRA,mean_acc,worst_acc,seconds" > $CSV
 
-# Przygotuj indeksy
+# 5) Generate or load fixed subset indices for reproducibility
 IDX=metrics/indices_val.txt
 if [ ! -f "$IDX" ]; then
   python3 - <<PY
@@ -37,14 +66,14 @@ with open("$IDX","w") as f:
 PY
 fi
 
-# Pobierz listę form
+# 6) Retrieve canonical form IDs from code
 FORM_IDS=( $(python3 - <<PY
 from src.geometry.canonical_forms import FORMS
 print(' '.join(str(k) for k in sorted(FORMS.keys())))
 PY
 ) )
 
-# Główna pętla
+# 7) Main certification loop
 for M in "${MODELS[@]}"; do
   echo ">>> Certification for model: $M" | tee -a $TXT
 
@@ -52,7 +81,7 @@ for M in "${MODELS[@]}"; do
     for SEP in "${SEV_LIST[@]}"; do
       echo "  * form=$FORM_ID severity=$SEP" >> $TXT
 
-      # uruchamiamy certify_instance bezpośrednio
+      # Run single-instance certification and capture results
             read CRA mean worst < <(python3 - <<PY
 import json, torch, timm, importlib
 from torch.utils.data import Subset, DataLoader
@@ -63,7 +92,7 @@ from src.utils.compute_log import ComputeLogger
 name = "$M"
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
-# --- 1) Load model --------------------------------
+# --- Load model --------------------------------
 if name.endswith("_qaug"):
     base = name.replace("_qaug", "")
     model = timm.create_model(base, pretrained=False).to(device).eval()
@@ -77,7 +106,7 @@ else:
     model = rb.get_robust_model(name, device=device)
     apply_norm = False
 
-# --- 2) DataLoader -------------------------------
+# --- DataLoader -------------------------------
 ds = build_imagenet_val(qc=False,
                         eps_aff=0.0,
                         eps_trans=0.0,
@@ -89,7 +118,7 @@ loader = DataLoader(Subset(ds, idx),
                     num_workers=8,
                     pin_memory=True)
 
-# --- 3) Certification -----------------------------
+# --- Certification -----------------------------
 with ComputeLogger(tag=f"certify_{name}",
                    extra={"form_id":$FORM_ID, "severity":$SEP, "grid":$GRID}):
     cra, mean_acc, worst_acc = certify_instance(
@@ -100,12 +129,12 @@ with ComputeLogger(tag=f"certify_{name}",
         device=device
     )
 
-# --- 4) Output -----------------------------
+# --- Output -----------------------------
 print(f"{cra:.4f} {mean_acc:.4f} {worst_acc:.4f}")
 PY
       )
 
-      # Zapisz do CSV i TXT
+      # Save to CSV and TXT
       echo "$M,$FORM_ID,$SEP,$GRID,$CRA,$mean,$worst" >> $CSV
       echo "      -> CRA = $CRA" >> $TXT
 
