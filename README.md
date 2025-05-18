@@ -134,6 +134,8 @@ Hardware used in the paper: **1× NVIDIA A100 80 GB**, runtime ≈24 GPU
 
 ## Pre-trained checkpoints
 
+Download the .pth files and place them in a folder named models/ at the repository root.
+
 | Backbone | Clean top-1 | QC @ ε=0.30 | Download |
 |----------|-------------|-------------|----------|
 | ResNet-50       | 76.5 % | **29.1 %** | [resnet50_qaug.pth](https://github.com/quadrobust/quadratic_robustness_plus/releases/download/v1.0-checkpoints/resnet50_qaug.pth) |
@@ -143,7 +145,7 @@ Hardware used in the paper: **1× NVIDIA A100 80 GB**, runtime ≈24 GPU
 ```bash
 # one-liner download + move to models/
 wget -P models/ https://github.com/quadrobust/quadratic_robustness_plus/releases/download/v1.0-checkpoints/resnet50_qaug.pth
-
+```
 ---
 
 ## License & dataset usage
