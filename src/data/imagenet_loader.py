@@ -1,4 +1,21 @@
-# src/data/imagenet_loader.py
+#!/usr/bin/env python3
+"""
+imagenet_loader.py
+
+ImageNet Validation Loader & QuadAug Integration
+------------------------------------------------
+Provides:
+  - `build_imagenet_val(...)`: constructs an ImageFolder dataset for ImageNet-val,
+     optionally applying QuadraticAug (QuadAugTransform) for on-the-fly QC corruptions.
+  - `loader(...)`: wraps the dataset in a DataLoader with sensible defaults.
+
+Usage example:
+    from src.data.imagenet_loader import loader
+    # Clean data
+    clean_loader = loader(batch=128, qc=False)
+    # Quadratic-C corruption at severity 0.3
+    qc_loader    = loader(batch=128, qc=True, eps_aff=0.3, eps_trans=0.3)
+"""
 
 import pathlib
 from torchvision.datasets import ImageFolder
