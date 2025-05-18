@@ -1,4 +1,17 @@
 #!/usr/bin/env bash
+
+#
+# eval_finetuned.sh
+#
+# Evaluate QuadraticAug fine-tuned ImageNet backbones on:
+#   1) Clean ImageNet-val
+#   2) Quadratic-C (15 canonical quadratic warps at multiple ε levels)
+#
+# Assumes that checkpoints (*.pth) live under models/ and writes:
+#   • metrics/finetuned.csv – comma-separated results
+#   • metrics/finetuned.txt – human-readable log
+#
+
 set -e
 
 # ───────────────────────────────────────────────────────
