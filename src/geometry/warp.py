@@ -1,3 +1,12 @@
+
+# src/geometry/warp.py
+"""
+Defines the core quadratic warp operator for batch images:
+  warp = (A_L, t_L) ∘ F_type ∘ (A_R, t_R)
+where F_type is one of 15 canonical quadratic forms.
+This module exposes the `quadratic_warp` function.
+"""
+
 import torch, torch.nn.functional as F
 from .canonical_forms import get_form
 from .lin_ops import sample_ga2
