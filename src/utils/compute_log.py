@@ -1,3 +1,22 @@
+# src/utils/compute_log.py
+"""
+ComputeLogger: context manager to log runtime and GPU memory usage per code block.
+
+Usage:
+    with ComputeLogger(tag="mytag", extra={"eps": 0.3}):
+        # run evaluation or training
+
+Writes one JSONL entry per exit to metrics/compute_log.jsonl:
+    {
+      "tag": "mytag",
+      "runtime_s": 12.34,
+      "gpu_name": "NVIDIA A100",
+      "gpu_count": 1,
+      "peak_mem_MB": 1234.5,
+      "eps": 0.3
+    }
+"""
+
 import time, json, os, torch
 import sys
 
