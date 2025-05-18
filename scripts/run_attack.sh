@@ -1,4 +1,25 @@
 #!/usr/bin/env bash
+
+#
+# run_attack.sh
+#
+# Performs an adaptive Quadratic-PGD attack sweep over multiple models and
+# quadratic warp severities (ε) on a fixed subset of ImageNet-val (5 000 images).
+#
+# Outputs:
+#   • metrics/attack_sweep.csv – CSV with columns: model, eps, CA, ASR, RA, conf_drop
+#   • metrics/attack_sweep.txt – human-readable summary
+#
+# Attack parameters (can be tweaked below):
+#   BATCH      – DataLoader batch size
+#   SUBSET     – Number of val images to attack (random 5 000, fixed seed)
+#   ITERS      – PGD iterations
+#   EPS_LIST   – List of (ε_aff, ε_trans) pairs to test
+#
+# Usage:
+#   bash scripts/run_attack.sh
+#
+
 set -e
 
 # Define the root directory of the project
