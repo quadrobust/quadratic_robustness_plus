@@ -1,12 +1,30 @@
+#!/usr/bin/env python3
 """
-Quadratic‑PGD attack
---------------------
-We optimize affine‑pre (A_R, t_R) and affine‑post (A_L, t_L) transformations
-around identity matrices:
-    A = I + δ_A      with ‖δ_A‖_F ≤ eps_aff
-    t ∈ ℝ^2          with ‖t‖_2   ≤ eps_trans
-δ_A and t are optimization parameters with requires_grad=True.
-This attack performs a Projected Gradient Descent on these parameters to generate adversarial examples.
+q_attack.py
+
+Adaptive Quadratic‐PGD Attack
+-----------------------------
+Performs a projected gradient descent in the space of quadratic warp parameters
+to craft adversarial examples against a given vision model.
+
+We parameterize each attack as two affine perturbations around identity:
+  A_R = I + δA_R, t_R     (pre‐warp)
+  A_L = I + δA_L, t_L     (post‐warp)
+with constraints ‖δA‖_F ≤ eps_aff and ‖t‖_2 ≤ eps_trans.
+
+Functions:
+  - q_pgd_batch(...):
+      Runs the PGD attack across a batch, cycling through multiple canonical
+      quadratic forms (beam search). Returns the best adversarial images and
+      a mask of which samples were successfully attacked.
+
+  - _clamp(delta, eps):
+      Projects parameter tensors onto the appropriate norm‐ball
+      (Frobenius or Euclidean) to enforce the perturbation budget.
+
+  - _apply_quad_affine(x, form_id, dAr, dAl, tr, tl):
+      Helper applying the learned warp parameters to a batch of images
+      (loop per‐sample, as batch sizes are small).
 """
 
 import torch, torch.nn.functional as F
