@@ -1,13 +1,11 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """
-Fine-tuning with QuadraticAug for three models:
-  • resnet50
-  • efficientnet_b3
-  • vit_small_patch16_224
+train/finetune_quadaug.py
 
-Checkpoints are saved in the models/ folder.
-Training report (hyperparameters, durations, final statistics) is saved to models/training_report.txt.
+Fine-tune ImageNet backbones with QuadraticAug augmentation.
+Supports: resnet50, efficientnet_b3, vit_small_patch16_224.
+Saves model checkpoints under models/ and logs hyperparameters, loss,
+training duration and post-train accuracy to metrics/training_report.txt.
 """
 
 import os, sys
@@ -36,6 +34,22 @@ from src.data.imagenet_loader import build_imagenet_val
 # --------------------------------------------------------------------
 # 1) Training function for a single model
 # --------------------------------------------------------------------
+
+"""
+    Train a pretrained backbone with QuadraticAug on ImageNet-Val split.
+
+    Applies on-the-fly QuadraticAug with eps_aff=eps, eps_trans=eps.
+
+    Args:
+        model_name: Name of model in timm (e.g., 'resnet50').
+        eps: ε parameter for affine and translation sampling.
+        epochs: Number of fine-tuning epochs.
+        batch_size: Batch size for DataLoader.
+        lr: Learning rate for AdamW.
+        root: Path to ImageNet-Val directory.
+        device: Device specifier ('cuda' or 'cpu').
+"""
+
 def train_model(model_name: str,
                 eps: float,
                 epochs: int,
