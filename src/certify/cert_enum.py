@@ -1,4 +1,32 @@
-# src/certify/cert_enum.py
+#!/usr/bin/env python3
+"""
+cert_enum.py
+
+Deterministic Robustness Certification via Grid Enumeration
+-----------------------------------------------------------
+Implements exhaustive certification over a grid of quadratic warp parameters.
+
+Key functionality:
+  - certify_instance(model, loader, form_id, severity, grid_size, device):
+      For each sample in loader, warps it under all (eps_aff, eps_trans) 
+      pairs on a grid [0, severity]×[0, severity], and checks if the model 
+      classifies it correctly in every case. Returns:
+        • CRA: Certified Robust Accuracy (fraction of samples robust on all grid points)
+        • mean_acc: same as CRA (for compatibility)
+        • worst_acc: same as CRA (we do not track per-sample minima)
+  - main(): CLI entry point for batch certification via argparse.
+
+Usage example:
+  python src/certify/cert_enum.py \
+    --model_path models/resnet50_qaug.pth \
+    --model_arch resnet50_qaug \
+    --form_id 3 \
+    --severity 0.10 \
+    --grid_size 5 \
+    --batch 64
+"""
+
+
 import argparse
 import json
 import time
@@ -33,13 +61,13 @@ def certify_instance(model, loader, form_id: int, severity: float,
             x, y = x.to(device), y.to(device)
             B = x.size(0)
             total_samples += B
-            # start with all True
+            # Initially assume all samples are robust
             robust_mask = torch.ones(B, dtype=torch.bool, device=device)
 
             # for each grid point, warp and test
             for eps_aff, eps_trans in product(aff_values, trans_values):
                 if not robust_mask.any():
-                    break   # nic więcej nie trzeba sprawdzać
+                    break   # no samples left to certify
                 # warp only the subset still robust
                 idx = robust_mask.nonzero(as_tuple=True)[0]
                 x_sub = x[idx]
@@ -52,16 +80,16 @@ def certify_instance(model, loader, form_id: int, severity: float,
                     eps_trans=eps_trans,
                     device=device
                 )
-                with autocast():  # opcjonalnie bfloat16
+                with autocast():
                     preds = model(xw).argmax(dim=1)
-                # update mask: tylko te, które dalej poprawne
+                # Update mask: keep only those still correctly classified
                 robust_mask[idx] = (preds == y_sub)
 
-            # po wszystkich gridach, policz, ile zostało certyfikowanych
+            # Count certified samples in this batch
             certified_count += robust_mask.sum().item()
 
     CRA = certified_count / total_samples
-    # zwracamy trójkę dla kompatybilności ze skryptem bash
+    # mean_acc and worst_acc are identical here
     return CRA, CRA, CRA
 
 
@@ -101,7 +129,6 @@ def main():
     ds = build_imagenet_val(qc=False,
                             eps_aff=0., eps_trans=0.,
                             apply_normalize=apply_norm)
-    # wczytaj deterministyczny indeks z pliku
     idx = [int(x) for x in open('metrics/indices_val.txt')]
     loader = DataLoader(Subset(ds, idx),
                         batch_size=args.batch, shuffle=False,
