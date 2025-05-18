@@ -1,8 +1,10 @@
 # src/geometry/lin_ops.py
-# ---------------------------------------------------------
-#  Random affine transformations:
-#     GA(k) = GL(k) ⋉ ℝ^k   (x ↦ A·x + t)
-# ---------------------------------------------------------
+"""
+Utility functions to sample random affine transformations in 2D.
+Provides:
+  - _random_gl: random GL(k) matrix with controlled deviation and optional scale variation.
+  - sample_ga2: draws a 2×2 linear map A and translation vector t for x ↦ A x + t.
+"""
 import torch, random
 from typing import Tuple
 
