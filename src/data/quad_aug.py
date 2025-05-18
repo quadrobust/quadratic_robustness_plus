@@ -1,4 +1,28 @@
-# src/data/quad_aug.py
+#!/usr/bin/env python3
+"""
+quad_aug.py
+
+QuadraticAug Transform for PyTorch / torchvision
+------------------------------------------------
+On-the-fly data augmentation that applies a random degree-2 (quadratic)
+spatial warp to each image tensor.
+
+Key features:
+  - Samples one of the 15 canonical quadratic forms per invocation.
+  - Wraps two small random affine perturbations around each form.
+  - Probability `p` of applying the warp; otherwise returns tensor unchanged.
+
+Usage:
+    from src.data.quad_aug import QuadAugTransform
+    transform = QuadAugTransform(p=0.7, eps_aff=0.3, eps_trans=0.3)
+    # as part of a torchvision pipeline:
+    pipeline = torchvision.transforms.Compose([
+        Resize(256), CenterCrop(224),
+        transform,
+        Normalize(mean, std),
+    ])
+"""
+
 import sys, os
 
 # Add the project root to the system path to allow relative imports
