@@ -1,3 +1,19 @@
+#!/usr/bin/env python3
+"""
+canonical_forms.py
+
+Defines the 15 canonical degree-2 quadratic mappings used
+for generating and warping image grids. Each mapping is
+registered with a unique integer key in the `FORMS` dict.
+
+Functions:
+  - get_form(id):    Retrieve the mapping function by ID.
+  - random_form():   Sample a random mapping from the set.
+
+Mapping signature: fn(x, y) -> (x', y'). Operates elementwise on coordinates.
+"""
+
+
 import torch
 import random
 
