@@ -1,4 +1,16 @@
 #!/usr/bin/env bash
+
+#
+# eval_baseline.sh
+#
+# Evaluate both standard (pretrained) and robust-bench ImageNet models
+# on:
+#   1) Clean ImageNet-val
+#   2) Quadratic-C (15 canonical quadratic warps at multiple ε levels)
+#
+# Outputs a CSV (metrics/baseline.csv) and a human-readable TXT (metrics/baseline.txt).
+#
+
 set -e
 
 # ───────────────────────────────────────────────────────
